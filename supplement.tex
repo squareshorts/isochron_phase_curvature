@@ -1,0 +1,176 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,longtable}
+\usepackage{pdflscape}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage[backend=biber,style=numeric,sorting=none,maxbibnames=99]{biblatex}
+\addbibresource{references.bib}
+\geometry{margin=0.85in}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\R}{\mathbb{R}}
+
+\title{Supplemental Material\\\large Affine-invariant isochron curvature predicts finite-amplitude phase-reduction error in nonlinear oscillators}
+\author{Thaisse Dias Paes \and Jo\~ao Marcos Xavier de Lima \and Ant\^onio Pereira J\'unior}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Affine equivalence under covariance whitening}
+Let a limit cycle in coordinates $x\in\R^d$ have time-weighted mean $\mu$ and positive-definite covariance $\Sigma$. Write $S=\Sigma^{1/2}$ and define $y=S^{-1}(x-\mu)$. Under a nonsingular affine change of variables
+\begin{equation}
+x'=Ax+b,
+\end{equation}
+the transformed orbit has
+\begin{equation}
+\mu'=A\mu+b,\qquad \Sigma'=A\Sigma A^{\mathsf T}.
+\end{equation}
+The whitened transformed coordinate is therefore
+\begin{align}
+y'&=(\Sigma')^{-1/2}(x'-\mu')\\
+&=(A\Sigma A^{\mathsf T})^{-1/2}ASy\\
+&=Qy,
+\end{align}
+where
+\begin{equation}
+Q=(A\Sigma A^{\mathsf T})^{-1/2}A\Sigma^{1/2}.
+\end{equation}
+Direct multiplication gives
+\begin{align}
+QQ^{\mathsf T}
+&=(A\Sigma A^{\mathsf T})^{-1/2}A\Sigma A^{\mathsf T}(A\Sigma A^{\mathsf T})^{-1/2}\\
+&=I,
+\end{align}
+so $Q$ is orthogonal. If $\Theta'(y')=\Theta(Q^{\mathsf T}y')$, then
+\begin{equation}
+g_y'=Qg_y,\qquad H_y'=QH_yQ^{\mathsf T}.
+\end{equation}
+The Euclidean gradient norm, Hessian Frobenius and spectral norms, Hessian eigenvalues, and angles expressed relative to the correspondingly transformed cycle tangent are consequently invariant. Translation is removed by centering and the affine linear component survives only through the orthogonal factor $Q$ after whitening.
+
+\section{Oscillator equations and parameter sets}
+The neuronal oscillator equations follow the standard FitzHugh--Nagumo, Morris--Lecar, and Hindmarsh--Rose formulations \cite{FitzHugh1961,MorrisLecar1981,HindmarshRose1984}, with the HR fast subsystem interpreted through the usual slow--fast decomposition \cite{Fenichel1979}. Stuart--Landau systems provide analytic controls \cite{Stuart1958}.
+
+\subsection{FitzHugh--Nagumo}
+The FHN system was
+\begin{align}
+\dot v &= v-\frac{v^3}{3}-w+I,\\
+\dot w &= \frac{v+0.7-0.8w}{\tau}.
+\end{align}
+The parameter grid combined $I\in\{0.450,0.624,0.798,0.972,1.146,1.320\}$ with $\tau\in\{10,12.5,15\}$, giving 18 settings.
+
+\subsection{Morris--Lecar}
+The Morris--Lecar system was
+\begin{align}
+C\dot V &= I-g_{\mathrm{Ca}}m_\infty(V)(V-V_{\mathrm{Ca}})-g_Kw(V-V_K)-g_L(V-V_L),\\
+\dot w &= \phi\frac{w_\infty(V)-w}{\tau_w(V)},
+\end{align}
+with
+\begin{align}
+m_\infty(V)&=\frac12\left[1+\tanh\left(\frac{V-V_1}{V_2}\right)\right],\\
+w_\infty(V)&=\frac12\left[1+\tanh\left(\frac{V-V_3}{V_4}\right)\right],\\
+\tau_w(V)&=\operatorname{sech}\left(\frac{V-V_3}{2V_4}\right).
+\end{align}
+Common parameters were $C=20$, $g_K=8$, $g_L=2$, $V_{\mathrm{Ca}}=120$, $V_K=-84$, $V_L=-60$, $V_1=-1.2$, and $V_2=18$. The Type-II regime used $V_3=2$, $V_4=30$, and $\phi=0.04$. Seven settings used $g_{\mathrm{Ca}}=4.4$ with $I\in\{95,100,105,110,115,120,130\}$, and four additional settings used $I=110$ with $g_{\mathrm{Ca}}\in\{4.0,4.2,4.6,4.8\}$. The Type-I regime used $V_3=12$, $V_4=17.4$, $\phi=0.0667$, $g_{\mathrm{Ca}}=4.0$, and $I\in\{40,45,50,55,60,65,70\}$.
+
+\subsection{Hindmarsh--Rose fast subsystem}
+The HR fast subsystem at fixed slow-variable values was
+\begin{align}
+\dot x &= y-x^3+3x^2-\bar z+I,\\
+\dot y &= 1-5x^2-y.
+\end{align}
+The 12 $(I,\bar z)$ pairs were
+\begin{equation*}
+\begin{split}
+&(1.60,1.60),(1.80,1.70),(2.00,1.80),(2.20,1.90),(2.40,2.00),(2.60,2.10),\\
+&(2.80,2.20),(2.50,1.60),(2.70,1.70),(2.90,1.80),(3.20,1.90),(3.50,2.00).
+\end{split}
+\end{equation*}
+This planar system represents the fast dynamics at a fixed value of the slow HR variable.
+
+\subsection{Stuart--Landau controls}
+The Cartesian Stuart--Landau system was
+\begin{align}
+\dot x &= (\mu-r^2)x-(\omega+\beta r^2)y,\\
+\dot y &= (\omega+\beta r^2)x+(\mu-r^2)y,
+\end{align}
+where $r^2=x^2+y^2$, $\omega=1$, $\mu\in\{0.8,1.1,1.4\}$, and $\beta\in\{0,0.5,1,1.5,2\}$. Its asymptotic phase in cycles is
+\begin{equation}
+\Theta(r,\theta)=\frac{\theta+\beta\ln(r/\sqrt{\mu})}{2\pi}\pmod 1.
+\end{equation}
+Writing $s=x^2+y^2$, the analytic gradient is
+\begin{equation}
+\nabla\Theta=\frac{1}{2\pi s}
+\begin{pmatrix}
+\beta x-y\\
+x+\beta y
+\end{pmatrix},
+\end{equation}
+and the Hessian is
+\begin{equation}
+\nabla^2\Theta=\frac{1}{2\pi s^2}
+\begin{pmatrix}
+\beta(y^2-x^2)+2xy & y^2-x^2-2\beta xy\\
+y^2-x^2-2\beta xy & \beta(x^2-y^2)-2xy
+\end{pmatrix}.
+\end{equation}
+These expressions provide independent references for both derivative orders.
+
+\section{Cycle extraction, fitting, and phase-reset evaluation}
+Numerical cycles were extracted after transient integration with DOP853. The period was determined from consecutive maxima of the first state coordinate, and accepted cycles were represented by 4096 samples uniform in elapsed time. Across the 63 settings, the maximum normalized cycle-closure error was $1.13\times10^{-7}$ and the maximum section-interval coefficient of variation was $7.93\times10^{-9}$.
+
+At every one of the 16 phase nodes, the local derivative fit used 16 directions at radii 0.01 and 0.02 in whitened coordinates. The 32 phase-reset samples per node supplied five regressors for the two gradient components and three independent components of a symmetric Hessian. The evaluation set used 12 angular directions offset from the fit directions and six amplitudes, yielding $16\times12\times6=1152$ held-out trials per setting and 72,576 evaluation trials overall. The fit clouds contain an additional 32,256 local phase-reset rows, for 104,832 fit-plus-evaluation rows in the computational benchmark.
+
+Numerical reference resets were computed after two periods and final projection onto the periodic cycle spline in whitened coordinates. The validity threshold was a final cycle distance below $5\times10^{-3}$. Among valid trials, the median final distance was $4.21\times10^{-10}$, the 99th percentile was $3.67\times10^{-7}$, and the maximum was $2.56\times10^{-4}$. Invalid trials had final distances from 0.085 to 0.418, separating them sharply from the accepted distribution.
+
+\section{Coverage at the largest amplitudes}
+Coverage was complete for every setting through $\eps=0.15$. The only incomplete setting-amplitude combinations are shown in Table~\ref{tab:coverage}. Their deficits sum to the 11 invalid evaluations reported in the main article.
+
+\begin{table}[ht]
+\centering
+\caption{Incomplete held-out evaluation coverage.}
+\label{tab:coverage}
+\begin{tabular}{rllrrr}
+\toprule
+Index & Family & Parameters & $\eps$ & Valid / total & Coverage\\
+\midrule
+18 & ML-II & $I=95$, $g_{\mathrm{Ca}}=4.4$ & 0.20 & 188/192 & 0.979167\\
+18 & ML-II & $I=95$, $g_{\mathrm{Ca}}=4.4$ & 0.25 & 186/192 & 0.968750\\
+36 & HR-fast & $I=1.6$, $\bar z=1.6$ & 0.25 & 191/192 & 0.994792\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Numerical sensitivity analyses}
+The analytic and numerical checks are summarized in Table~\ref{tab:sensitivity}. The exact Stuart--Landau comparison tests the derivative estimator directly, while the remaining analyses quantify the stability of the finite-amplitude endpoint under integration, fit-radius, and phase-sampling changes.
+
+\begin{table}[ht]
+\centering
+\caption{Derivative and numerical sensitivity results.}
+\label{tab:sensitivity}
+\begin{tabular}{p{0.55\textwidth}r}
+\toprule
+Quantity & Result\\
+\midrule
+Maximum relative gradient error, analytic Stuart--Landau & $2.273\times10^{-14}$\\
+Maximum relative Hessian error, analytic Stuart--Landau & $8.607\times10^{-12}$\\
+Maximum change in 95th-percentile phase reset after halving time step & $8.658\times10^{-8}$ cycles\\
+Maximum change in error-reduction fraction after halving time step & $6.623\times10^{-6}$\\
+95th-percentile absolute gain difference, fit radius 0.01 vs. 0.02 & 0.0054\\
+95th-percentile absolute gain difference, even vs. odd phase-node subsets & 0.1364\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Complete setting-level results}
+Table~\ref{tab:allsettings} reports the period, nontrivial planar Floquet log multiplier, and second-order gain at the two amplitudes emphasized in the main article. Positive gain means that the Hessian-corrected prediction has smaller setting-level median absolute phase-reset error than the first-order prediction.
+
+\input{data/setting_table.tex}
+
+\printbibliography
+\end{document}
