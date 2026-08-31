@@ -1,0 +1,12 @@
+quantity,value
+settings,63
+phase_nodes_per_setting,16
+fit_directions_per_node,16
+fit_radii_per_direction,2
+fit_samples_per_node,32
+fit_sample_rows,32256
+evaluation_directions_per_node,12
+evaluation_amplitudes,6
+evaluation_trials_per_setting,1152
+evaluation_trial_rows,72576
+total_fit_and_evaluation_rows,104832

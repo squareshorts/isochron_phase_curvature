@@ -1,0 +1,2 @@
+n_transforms_per_setting,n_total_transforms,max_condition_number,native_gradient_spread,native_hessian_spread,unitbox_gradient_spread,unitbox_hessian_spread,worst_whitened_relative_discrepancy
+250,15750,4838,7072,55080000,426600,217100000000,4.919e-05

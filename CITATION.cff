@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use these computational materials, please cite the archived release."
+title: "ISOCHRON phase curvature: numerical data and figure-reproduction code"
+version: 1.0.0
+type: software
+license: MIT
+authors:
+  - given-names: Thaisse Dias
+    family-names: Paes
+    affiliation: "Signal Processing Laboratory, Institute of Technology, Federal University of Pará"
+    orcid: "https://orcid.org/0009-0006-2429-413X"
+  - given-names: Antonio
+    family-names: Pereira
+    affiliation: "Signal Processing Laboratory, Institute of Technology, Federal University of Pará"
+    orcid: "https://orcid.org/0000-0002-0808-1058"
+keywords:
+  - nonlinear dynamics
+  - phase reduction
+  - asymptotic phase
+  - isochrons
+  - phase Hessian
+  - covariance whitening
+  - nonlinear oscillators
+  - computational neuroscience
+repository-code: "https://github.com/squareshorts/isochron_phase_curvature"

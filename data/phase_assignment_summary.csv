@@ -1,0 +1,7 @@
+quantity,value
+valid_final_distance_median,4.21e-10
+valid_final_distance_p99,3.67e-07
+valid_final_distance_max,2.56e-04
+invalid_final_distance_min,8.5e-02
+invalid_final_distance_max,4.18e-01
+validity_threshold,5.0e-03

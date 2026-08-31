@@ -1,0 +1,4 @@
+setting_index,family,parameters,epsilon,valid_trials,total_trials,coverage
+18,ML-II,"I=95; gCa=4.4",0.20,188,192,0.979167
+18,ML-II,"I=95; gCa=4.4",0.25,186,192,0.968750
+36,HR-fast,"I=1.6; zbar=1.6",0.25,191,192,0.994792
